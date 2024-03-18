@@ -1,0 +1,8 @@
+// import XLSX from 'xlsx';
+
+// const workbook = XLSX.readFile("BC_List.xlsx");
+
+// const worksheets = {};
+// for (const sheetName of workbook.SheetNames) {
+//     worksheets[sheetName]  = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+// }
