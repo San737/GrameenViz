@@ -8,6 +8,10 @@ import {
   TileLayer,
   //   useMap,
 } from "react-leaflet";
+import L from "leaflet";
+// import * as BCData from "../../../data/BC_clean.json";
+
+L.Icon.Default.imagePath = "images/";
 
 function Map() {
   return (
