@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import * as BCData from "../../../data/BC_with_cord.json";
+import { useQuery } from "~/app/_context/queryHook";
 
 interface mapType {
   SNo: number;
@@ -22,6 +23,7 @@ export function State() {
   const [selectedState, setSelectedState] = useState<string>("");
   const [selectedDistrict, setSelectedDistrict] = useState<string>("");
   const [districts, setDistricts] = useState<string[]>([]);
+  const { setQuery } = useQuery();
 
   const handleStateChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedState = event.target.value;
@@ -44,7 +46,6 @@ export function State() {
     setSelectedDistrict(event.target.value);
   };
 
-  // Helper function to sort options in ascending order
   const sortOptions = (options: string[]) => {
     return options.sort((a, b) => a.localeCompare(b));
   };
@@ -74,6 +75,16 @@ export function State() {
       <div>
         <p>Selected State: {selectedState}</p>
         <p>Selected District: {selectedDistrict}</p>
+        <button
+          onClick={() => {
+            setQuery({
+              key: "State&District",
+              value: selectedState + "&" + selectedDistrict,
+            });
+          }}
+        >
+          Apply
+        </button>
       </div>
     </div>
   );
@@ -81,6 +92,7 @@ export function State() {
 
 export function BankName() {
   const [selectedBankName, setSelectedBankName] = useState<string>("");
+  const { setQuery } = useQuery();
 
   const handleBankNameChange = (
     event: React.ChangeEvent<HTMLSelectElement>,
@@ -108,12 +120,20 @@ export function BankName() {
         ))}
       </select>
       <p>Selected Bank Name: {selectedBankName}</p>
+      <button
+        onClick={() => {
+          setQuery({ key: "BankName", value: selectedBankName });
+        }}
+      >
+        Apply
+      </button>
     </div>
   );
 }
 
 export function Pincode() {
   const [selectedPincode, setSelectedPincode] = useState<number | null>(null);
+  const { setQuery } = useQuery();
 
   const handlePincodeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedPincode(parseInt(event.target.value, 10) || null);
@@ -139,6 +159,16 @@ export function Pincode() {
         ))}
       </select>
       <p>Selected Pincode: {selectedPincode ?? "N/A"}</p>
+      <button
+        onClick={() => {
+          setQuery({
+            key: "Pincode",
+            value: selectedPincode?.toString() ?? "",
+          });
+        }}
+      >
+        Apply
+      </button>
     </div>
   );
 }

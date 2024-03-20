@@ -3,12 +3,14 @@
 import "../../../../node_modules/leaflet/dist/leaflet.css";
 import {
   MapContainer,
-  Marker,
-  Popup,
+  // Marker,
+  // Popup,
   TileLayer,
+  // GeoJSON,
   //   useMap,
 } from "react-leaflet";
 import L from "leaflet";
+// import * as inData from "../../../data/india.json";
 // import * as BCData from "../../../data/BC_clean.json";
 
 L.Icon.Default.imagePath = "images/";
@@ -26,11 +28,14 @@ function Map() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[51.505, -0.09]}>
+
+      {/* <GeoJSON data={inData.features} /> */}
+
+      {/* <Marker position={[51.505, -0.09]}>
         <Popup>
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>
-      </Marker>
+      </Marker> */}
     </MapContainer>
   );
 }

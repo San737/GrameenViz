@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-// import Map from "../_components/scatter_map/map";
+import Map from "../_components/scatter_map/map";
 import { BankName, Pincode, State } from "../_components/scatter_map/query";
 
 export default function MapPage() {
@@ -66,7 +66,9 @@ export default function MapPage() {
         <div>
           <div>{renderComponent()}</div>
         </div>
-        <div>{/* <Map /> */}</div>
+        <div>
+          <Map />
+        </div>
       </main>
       <footer className="bg-slate-500">footer</footer>
     </div>

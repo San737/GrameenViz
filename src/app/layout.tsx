@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 // import "~react-leaflet-markercluster/dist/styles.min.css";
 
 import { Inter } from "next/font/google";
+import QueryContectProvider from "./_context/queryHook";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,7 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>{children}</body>
+      <body className={`font-sans ${inter.variable}`}>
+        <QueryContectProvider>{children}</QueryContectProvider>
+      </body>
     </html>
   );
 }
