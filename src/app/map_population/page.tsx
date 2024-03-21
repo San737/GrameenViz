@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Map from "../_components/choropleth_map/map";
+// import Map from "../_components/choropleth_map/map";
 import Link from "next/link";
 
 export default function mapPage() {
@@ -43,9 +43,7 @@ export default function mapPage() {
         </nav>
       </header>
       <main className="h-screen bg-slate-100 p-5 pt-28">
-        <div>
-          <Map />
-        </div>
+        <div>{/* <Map /> */}</div>
       </main>
     </div>
   );

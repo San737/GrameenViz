@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Map from "../_components/scatter_map/map";
+import Map from "../_components/scatter_map";
 import { BankName, Pincode, State } from "../_components/scatter_map/query";
 import Image from "next/image";
 import Link from "next/link";

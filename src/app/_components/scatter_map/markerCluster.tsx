@@ -49,6 +49,7 @@ function ShowBC() {
   const [filteredData, setFilteredData] = useState<mapType[]>();
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let filtered: any = [];
 
     if (query.key === "BankName") {
@@ -64,6 +65,7 @@ function ShowBC() {
       );
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     setFilteredData(filtered);
   }, [query]);
 
