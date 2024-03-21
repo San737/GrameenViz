@@ -7,9 +7,10 @@ import useSupercluster from "use-supercluster";
 import { Marker, Popup, useMap } from "react-leaflet";
 import type { mapType } from "./map";
 import type { BBox } from "geojson";
-import * as BCData from "../../../data/BC_with_cord.json";
+import { BCData } from "../../../data/BC_with_cord";
 import { useQuery } from "~/app/_context/queryHook";
 
+// const BCData : mapType[] = require("../../../data/BC_with_cord.json") as mapType[];
 // import { IconType } from 'path/to/iconType'; // Replace 'path/to/iconType' with the actual path to the IconType type
 
 // const icons = {};

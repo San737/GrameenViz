@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import * as BCData from "../../../data/BC_with_cord.json";
+import { BCData } from "../../../data/BC_with_cord";
 import { useQuery } from "~/app/_context/queryHook";
 
 interface mapType {
