@@ -51,8 +51,13 @@ export function State() {
   };
 
   return (
-    <div>
-      <select value={selectedState} onChange={handleStateChange}>
+    <div className="my-3 flex flex-col items-center justify-center gap-6 sm:flex-row ">
+      {/* <div className="flex items-center justify-center"> */}
+      <select
+        value={selectedState}
+        className="w-40 rounded-sm border p-1 indent-3 sm:mr-5"
+        onChange={handleStateChange}
+      >
         <option value="">Select State</option>
         {sortOptions(Array.from(new Set(BCData.map((obj) => obj.State)))).map(
           (state) => (
@@ -63,7 +68,11 @@ export function State() {
         )}
       </select>
 
-      <select value={selectedDistrict} onChange={handleDistrictChange}>
+      <select
+        value={selectedDistrict}
+        className="w-40 rounded-sm border p-1 indent-3"
+        onChange={handleDistrictChange}
+      >
         <option value="">Select District</option>
         {sortOptions(districts).map((district) => (
           <option key={district} value={district}>
@@ -71,21 +80,19 @@ export function State() {
           </option>
         ))}
       </select>
+      {/* </div> */}
 
-      <div>
-        <p>Selected State: {selectedState}</p>
-        <p>Selected District: {selectedDistrict}</p>
-        <button
-          onClick={() => {
-            setQuery({
-              key: "State&District",
-              value: selectedState + "&" + selectedDistrict,
-            });
-          }}
-        >
-          Apply
-        </button>
-      </div>
+      <button
+        className="my-4 rounded bg-blue-600 px-3 py-1  font-bold text-white hover:bg-blue-700"
+        onClick={() => {
+          setQuery({
+            key: "State&District",
+            value: selectedState + "&" + selectedDistrict,
+          });
+        }}
+      >
+        Apply
+      </button>
     </div>
   );
 }
@@ -109,9 +116,12 @@ export function BankName() {
   );
 
   return (
-    <div>
-      <h3>Bank Name</h3>
-      <select value={selectedBankName} onChange={handleBankNameChange}>
+    <div className="my-3 flex flex-col items-center justify-center gap-6 sm:flex-row ">
+      <select
+        value={selectedBankName}
+        className="w-50 rounded-sm border p-1 indent-3"
+        onChange={handleBankNameChange}
+      >
         <option value="">Select Bank Name</option>
         {uniqueBankNames.map((bankName) => (
           <option key={bankName} value={bankName}>
@@ -119,8 +129,8 @@ export function BankName() {
           </option>
         ))}
       </select>
-      <p>Selected Bank Name: {selectedBankName}</p>
       <button
+        className="my-4 rounded bg-blue-600 px-3 py-1  font-bold text-white hover:bg-blue-700"
         onClick={() => {
           setQuery({ key: "BankName", value: selectedBankName });
         }}
@@ -148,9 +158,12 @@ export function Pincode() {
   );
 
   return (
-    <div>
-      <h3>Pincode</h3>
-      <select value={selectedPincode ?? ""} onChange={handlePincodeChange}>
+    <div className="row-auto my-3 flex flex-col items-center justify-center gap-6 sm:flex-row ">
+      <select
+        value={selectedPincode ?? ""}
+        className="w-40 rounded-sm border p-1 indent-3"
+        onChange={handlePincodeChange}
+      >
         <option value="">Select Pincode</option>
         {uniquePincodes.map((pincode) => (
           <option key={pincode} value={pincode}>
@@ -158,8 +171,9 @@ export function Pincode() {
           </option>
         ))}
       </select>
-      <p>Selected Pincode: {selectedPincode ?? "N/A"}</p>
+
       <button
+        className="my-4 rounded bg-blue-600 px-3 py-1  font-bold text-white hover:bg-blue-700"
         onClick={() => {
           setQuery({
             key: "Pincode",
